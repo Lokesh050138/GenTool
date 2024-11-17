@@ -16,13 +16,16 @@ const __dirname = path.dirname(__filename);
 // Load environment variables
 dotenv.config();
 
-const app = express();
-const PORT: number = parseInt(process.env.PORT || '5000');
+// Use Render-assigned port or default to 5000
+const PORT: number = parseInt(process.env.PORT || '4000');
 
 // Debugging logs for deployment
 console.log(`Starting server with PORT: ${PORT}`);
 console.log(`Environment: ${process.env.NODE_ENV}`);
 console.log(`Frontend URL: ${process.env.FRONTEND_BASE_URL}`);
+
+// Initialize Express
+const app = express();
 
 // CORS configuration to allow frontend requests
 app.use(
@@ -49,8 +52,6 @@ app.use(
         saveUninitialized: false,
     })
 );
-
-
 
 // Initialize Passport for Google OAuth
 app.use(passport.initialize());
@@ -150,9 +151,8 @@ if (process.env.NODE_ENV === 'production') {
 
 // Start the server, binding to 0.0.0.0 for Render
 const server = app.listen(PORT, '0.0.0.0', () => {
-    logger.info(`Server listening at http://localhost:${PORT}`);
+    logger.info(`Server listening at http://0.0.0.0:${PORT}`);
 });
-
 
 // Error handling middleware
 app.use((err: any, req: Request, res: Response, next: NextFunction) => {
