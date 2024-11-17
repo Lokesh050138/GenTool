@@ -17,9 +17,7 @@ const __dirname = path.dirname(__filename);
 dotenv.config();
 
 const app = express();
-
-// Use the `PORT` environment variable set by Render, or default to 3000 for local development
-const PORT = process.env.PORT || 5000; // Use 5000 for local development or any port you prefer locally
+const PORT: number = parseInt(process.env.PORT || '3000');
 
 // CORS configuration to allow frontend requests
 app.use(
@@ -123,7 +121,7 @@ app.get('/user', (req, res) => {
 // Serve static files for production
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, '../client/build')));
-
+    
     app.get('*', (req, res) => {
         res.sendFile(path.join(__dirname, '../client/build/index.html'));
     });
