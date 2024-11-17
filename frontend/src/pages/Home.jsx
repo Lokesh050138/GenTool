@@ -4,7 +4,7 @@ import * as XLSX from 'xlsx';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import logo from "../assets/barabari_logo.png";
-import styles from "./Home.module.scss";
+import "./Home.css";
 import Input from "../components/Input/Input";
 import { MdEmail } from "react-icons/md";
 import { RiLockPasswordFill } from "react-icons/ri";
@@ -52,7 +52,7 @@ import encryptData from "../utils/encryptData";
 const initialInputState = {
     starting: "",
     ending: "",
-    
+
     password: "",
     ccEmails: [],
     file: null,
@@ -60,7 +60,7 @@ const initialInputState = {
 };
 
 const initialErrorState = {
-    
+
     passwordError: "",
     startingError: "",
     endingError: "",
@@ -421,7 +421,7 @@ const Home = ({ email, setEmail }) => {
     }
 
     return (
-        <div className={styles.appContainer}>
+        <div className='appContainer'>
             <div className="absolute inset-0 z-0">
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-900 to-blue-600 opacity-90 animate-background" />
                 <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1440 320">
@@ -431,8 +431,8 @@ const Home = ({ email, setEmail }) => {
                 <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-purple-700 to-transparent opacity-70 animate-wave" />
             </div>
 
-            <div className={`${styles.formContainer} relative z-10 bg-gray-800 p-10 rounded-xl shadow-xl max-w-lg w-full backdrop-blur-md bg-opacity-60  flex flex-col justify-center items-center space-y-4 mt-[4rem]`}>
-                <div className={styles.formBox}>
+            <div className="formContainer relative z-10 bg-gray-800 p-10 rounded-xl shadow-xl max-w-lg w-full backdrop-blur-md bg-opacity-60  flex flex-col justify-center items-center space-y-4 mt-[4rem]">
+                <div className='formBox'>
                     <Input
                         isDisable={true}
                         placeholder="Email Id"
@@ -510,9 +510,9 @@ const Home = ({ email, setEmail }) => {
                         icon={<LuListEnd />}
                     />
 
-                    <div className={styles.fileInputContainer}>
+                    <div className='fileInputContainer'>
                         {inputState.fileName && (
-                            <div className={`${styles.fileName}`}>{inputState.fileName}</div>
+                            <div className='fileName'>{inputState.fileName}</div>
                         )}
                         <label htmlFor="file" className="file-label">Upload File</label>
                         <input
@@ -524,10 +524,8 @@ const Home = ({ email, setEmail }) => {
                         />
                     </div>
                     <button
-                        className={classNames(
-                            styles.submitButton,
-                            isLoading && styles.loading
-                        )}
+                        className={`submitButton {
+ ${isLoading ? 'loading' : ''}`}
                         onClick={handleSubmit}
                     >
                         {isLoading ? (
@@ -541,6 +539,7 @@ const Home = ({ email, setEmail }) => {
                             "Submit"
                         )}
                     </button>
+
                 </div>
                 <style>{`
             @keyframes background {
