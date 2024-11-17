@@ -1,0 +1,73 @@
+[
+    {
+        "salary": "Below 5000 INR",
+        "options": {
+            "First generation learner": 37,
+            "Below Poverty Line": 61,
+            "Belongs internally migrated family": 23,
+            "Applicant lacks access to welfare schemes": 20,
+            "Has basic documents": 18,
+            "Has lost a parent": 11,
+            "Survivor of abuse": 11,
+            "Survivor of domestic violence": 11,
+            "Has disability in family": 2,
+            "From a minority": 10,
+            "Family has a long-term ailment": 5
+        },
+        "total_ans":67
+    },
+    {
+        "salary": "Below 10,000 INR",
+        "options": {
+            "First generation learner": 46,
+            "Below Poverty Line": 41,
+            "Belongs internally migrated family": 42,
+            "Applicant lacks access to welfare schemes": 35,
+            "Has basic documents": 31,
+            "Has lost a parent": 2,
+            "Survivor of abuse": 13,
+            "Survivor of domestic violence": 8,
+            "Has disability in family": 6,
+            "From a minority": 14,
+            "Person with Disability": 1,
+            "Dropped out of School": 3,
+            "Family has a long-term ailment": 10,
+            "Facing difficulties accessing healthcare services?": 12
+        },
+        "total_ans":89
+    },
+    {
+        "salary": "Below 15,000 INR & More than 15,000",
+        "options": {
+            "First generation learner": 4,
+            "Below Poverty Line": 1,
+            "Belongs internally migrated family": 4,
+            "Applicant lacks access to welfare schemes": 1,
+            "Has basic documents": 1,
+            
+            "Has disability in family": 2,
+            "Person with Disability": 1,
+            "Family has a long-term ailment": 4
+        },
+        "total_ans":10
+    },
+     
+    {
+        "salary": "No Income",
+        "options": {
+            "First generation learner": 3,
+            "Below Poverty Line": 10,
+            "Belongs internally migrated family": 6,
+            "Applicant lacks access to welfare schemes": 4,
+            "Has basic documents": 2,
+            "Has lost a parent": 2,
+            "Survivor of abuse": 1,
+            "Survivor of domestic violence": 3,
+            "From a minority": 2,
+            "Person with Disability": 1,
+            "Family has a long-term ailment": 2,
+            "Facing difficulties accessing healthcare services?": 2
+        },
+        "total_ans":13
+    }
+]

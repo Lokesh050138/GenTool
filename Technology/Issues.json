@@ -1,0 +1,60 @@
+{
+    "First_Generation_Learner": [
+      {
+        "Salary": "Upto 5,000 INR",
+        "First_Generation_Learner": 37,
+        "total_attended": 67
+      },
+      {
+        "Salary": "Upto 10,000 INR",
+        "First_Generation_Learner": 46,
+        "total_attended": 89
+      },
+      {
+        "Salary": "Below 15,000 INR & 15,000 +",
+        "First_Generation_Learner": 4,
+        "total_attended": 10,
+        "people_Count": 180
+      }
+    ],
+    "Has_Lost_Parent": [
+      {
+        "Salary": "Upto 5,000 INR",
+        "Has_Lost_A_Parent": 11,
+        "total_attended": 67
+      },
+      {
+        "Salary": "Upto 10,000 INR",
+        "Has_Lost_A_Parent": 2,
+        "total_attended": 89,
+        "people_Count": 180
+      }
+    ],
+    "Abuse Survivor": [
+      {
+        "Salary": "Upto 5,000 INR",
+        "Survivor of abuse": 11,
+        "total_attended": 67
+      },
+      {
+        "Salary": "Upto 10,000 INR",
+        "Survivor of abuse": 13,
+        "total_attended": 89,
+        "people_Count": 180
+      }
+    ],
+    "domestic_violence": [
+      {
+        "Salary": "Upto 5,000 INR",
+        "Survivor of domestic violence": 11,
+        "total_attended": 67
+      },
+      {
+        "Salary": "Upto 10,000 INR",
+        "Survivor of domestic violence": 8,
+        "total_attended": 89,
+        "people_Count": 180
+      }
+    ]
+  }
+  

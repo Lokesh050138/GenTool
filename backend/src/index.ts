@@ -17,10 +17,10 @@ const __dirname = path.dirname(__filename);
 dotenv.config();
 
 const app = express();
-const PORT: number = parseInt(process.env.PORT || '3000');
+// const PORT: number = parseInt(process.env.PORT || '3000');
 
 // Debugging logs for deployment
-console.log(`Starting server with PORT: ${PORT}`);
+console.log(`Starting server with PORT: 3000`);
 console.log(`Environment: ${process.env.NODE_ENV}`);
 console.log(`Frontend URL: ${process.env.FRONTEND_BASE_URL}`);
 
@@ -147,9 +147,10 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // Start the server, binding to 0.0.0.0 for Render
-const server = app.listen(PORT, '0.0.0.0', () => {
-    logger.info(`Server listening at http://localhost:${PORT}`);
+const server = app.listen(3000, '0.0.0.0', () => {
+    logger.info(`Server listening at http://localhost:3000`);
 });
+
 
 // Error handling middleware
 app.use((err: any, req: Request, res: Response, next: NextFunction) => {
