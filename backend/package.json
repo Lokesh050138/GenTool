@@ -36,7 +36,7 @@
     "to-words": "^4.1.0",
     "tsx": "^4.7.2",
     "uglify-js": "^3.19.3",
-    "winston": "^3.16.0"
+    "winston": "^3.17.0"
   },
   "devDependencies": {
     "@types/connect-redis": "^0.0.23",
