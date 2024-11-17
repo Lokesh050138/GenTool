@@ -16,8 +16,16 @@ const __dirname = path.dirname(__filename);
 // Load environment variables
 dotenv.config();
 
+// Ensure necessary environment variables are set
+if (!process.env.GOOGLE_CLIENT_ID || !process.env.GOOGLE_CLIENT_SECRET || !process.env.FRONTEND_BASE_URL) {
+    console.error('Critical environment variables are missing. Please check your .env file.');
+    process.exit(1); // Exit the application if critical variables are missing
+}
+
 const app = express();
-const PORT: number = parseInt(process.env.PORT || '4000');
+
+// Port configuration
+const PORT: number = parseInt(process.env.PORT || '4000', 10); // Default to 4000 if not provided
 
 // CORS configuration to allow frontend requests
 app.use(
@@ -135,11 +143,16 @@ const server = app.listen(PORT, () => {
 // Error handling middleware
 app.use((err: any, req: Request, res: Response, next: NextFunction) => {
     logger.error(err);
-    res.redirect(process.env.FRONTEND_BASE_URL || '/');
+    res.status(500).json({ error: 'Internal Server Error' });
 });
 
-// Handle uncaught exceptions
+// Handle uncaught exceptions and unhandled promise rejections
 process.on('uncaughtException', (err) => {
     logger.error('Uncaught Exception:', err);
+    server.close(() => process.exit(1));
+});
+
+process.on('unhandledRejection', (err) => {
+    logger.error('Unhandled Promise Rejection:', err);
     server.close(() => process.exit(1));
 });
