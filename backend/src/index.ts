@@ -16,11 +16,11 @@ const __dirname = path.dirname(__filename);
 // Load environment variables
 dotenv.config();
 
-// Use Render-assigned port or default to 5000
+// Use Render-assigned port or default to 4000
 const PORT: number = parseInt(process.env.PORT || '4000');
 
 // Debugging logs for deployment
-console.log(`Starting server with PORT: ${PORT}`);
+console.log(`Starting server on PORT: ${PORT}`);
 console.log(`Environment: ${process.env.NODE_ENV}`);
 console.log(`Frontend URL: ${process.env.FRONTEND_BASE_URL}`);
 
